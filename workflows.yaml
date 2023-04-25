@@ -1,0 +1,20 @@
+comment: 'Running main workflow with initial steps'
+main_tasks:
+  - comment: 'Creating table and filling them'
+    subtasks:
+       - type: 'complex_sql'
+         file_location: './project/sql/ddl.sql'
+       - type: 'complex_sql'
+         file_location: './project/sql/inserts.sql'
+  - comment: 'Select-queries'
+    subtasks:
+      - type: 'complex_sql'
+        file_location: './project/sql/selects.sql'
+  - comment: 'Views and Indexes'
+    subtasks:
+      - type: 'complex_sql'
+        file_location: './project/sql/views_indexes.sql'
+  - comment: 'Procedures and Triggers'
+    subtasks:
+      - type: 'complex_sql'
+        file_location: './project/sql/functions.sql'
